@@ -13,6 +13,7 @@ namespace Globomantics.Services
         {
             conferences.Add(new ConferenceModel { Id = 1, Name = "NDC", Location = "Oslo" ,AttendeeTotal=100});
             conferences.Add(new ConferenceModel { Id = 2, Name = "IT/DevConnections", Location = "London" ,AttendeeTotal=150});
+            conferences.Add(new ConferenceModel { Id = 2, Name = "Re:Invent", Location = "NewYork", AttendeeTotal = 200 });
         }
         public Task Add(ConferenceModel model)
         {

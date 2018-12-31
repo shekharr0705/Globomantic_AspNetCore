@@ -18,8 +18,8 @@
     </div>
     <div class="row">
         <div class="col-md-2">
-            @await Component.InvokeAsync("Statistics",new { statCaption ="Statistics"})
-            @*<vc:statistics></vc:statistics>*@  @*Todo :Not working need to look*@
+            @*@await Component.InvokeAsync("Statistics",new { statCaption ="Statistics"})*@
+            <vc:statistics stat-caption="Stats"></vc:statistics>  
         </div>
         <div class="col-md-2">
             <a asp-action="Add">Add</a>
