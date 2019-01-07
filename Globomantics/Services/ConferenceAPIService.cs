@@ -10,9 +10,10 @@ namespace Globomantics.Services
     public class ConferenceAPIService : IConferenceService
     {
         private readonly HttpClient client;
-        public ConferenceAPIService(IHttpClientFactory httpClientFactory)
+        public ConferenceAPIService(HttpClient httpClient)
         {
-            client=httpClientFactory.CreateClient("GlobomanticAPI");
+            httpClient.BaseAddress = new Uri("http://localhost:5000");
+            client = httpClient;
         }
         public async Task Add(ConferenceModel model)
         {

@@ -26,10 +26,13 @@ namespace Globomantics
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IConferenceService, ConferenceAPIService>();
+            //services.AddSingleton<IConferenceService, ConferenceAPIService>();
             services.AddSingleton<IProposalService, ProposalAPIService>();
 
+            //We can use either of below two ways to register HttpClient
             services.AddHttpClient("GlobomanticAPI",c=> c.BaseAddress= new Uri("http://localhost:5000"));
+            services.AddHttpClient<IConferenceService, ConferenceAPIService>();// strongly type http client. check ConferenceAPIService code for code changes
+
 
             services.Configure<GlobomanticsOptions>(_configuration.GetSection("Globomantics"));
         }
